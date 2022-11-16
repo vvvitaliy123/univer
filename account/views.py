@@ -33,20 +33,9 @@ def reg(request):
                     <a href="{url}">{url}</a>
                 </h4>   
                 <hr />
-            """
-
-            #4. Відправляємо поштове повідомлення:
-            success = send_mail(subject, '', 'Site-Univer', [email], fail_silently=False, html_message=body)
-            if not success:
-                report['info'] = 'Ваша пошта недійсна!'
-            else:
-                report['info'] = f"""
-                    На вказаній Вами при реєстарції E-Mail: {email} <br>
-                    відправлено повідомлення для ії підтвердження.
-                """
-
-        # 4. Завантажуємо звіт на сторінку результатів
+            """                    
         return render(request, 'account/reg_res.html', context=report)
+
 
 def confirm(request):
     # Зчитуємо емайл, від якого прийшло підтвердження
