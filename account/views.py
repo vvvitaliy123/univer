@@ -24,7 +24,7 @@ def reg(request):
             report['mess'] = 'Ви успішно зареєстровані!'
 
         # 3. Завантажуємо звіт на сторінку результатів
-        return render(request, 'account/reg_res.html', content=report)
+        return render(request, 'account/reg_res.html', context=report)
 
 def confirm(request):
     return render(request, 'account/confirm.html')
